@@ -19,7 +19,7 @@
     let publishing;
 
     const testStreamingCapability = (subscriber, callback) => {
-      performQualityTest({subscriber, timeout: TEST_TIMEOUT_MS}, (error, results) => {
+      performQualityTest({subscriber, timeout: TEST_TIMEOUT_MS}, (error, results) => {        
         // If we tried to set video constraints, but no video data was found
         if (!results.video) {
           const audioSupported = results.audio.bitsPerSecond > 25000 &&
@@ -27,8 +27,7 @@
 
           if (audioSupported) {
             return callback(false, {
-              text: 'You can\'t send video because no camera was found, ' +
-                'but your bandwidth can support an audio-only stream.',
+              text: 'カメラが見つからなかったためビデオを送信できませんが、帯域幅は音声のみのストリームをサポートできます。',
               classification: 'precall-warning',
               audio: results.audio,
               video: null,
@@ -37,8 +36,7 @@
           }
 
           return callback(false, {
-              text: 'You can\'t send video because no camera was found, ' +
-                'and your bandwidth is too low for an audio-only stream.',
+              text: 'カメラが見つからず、かつ帯域幅が音声のみのストリームにも低すぎます。ビデオを送信できません。',
             classification: 'precall-error',
             audio: results.audio,
             video: null
@@ -52,7 +50,7 @@
 
         if (audioVideoSupported) {
           return callback(false, {
-            text: 'You\'re all set!',
+            text: '準備完了',
             classification: 'precall-tick',
             audio: results.audio,
             video: results.video
@@ -61,7 +59,7 @@
 
         if (results.audio.packetLossRatio < 0.05) {
           return callback(false, {
-            text: 'Your bandwidth can support audio only.',
+            text: '帯域幅は音声のみをサポートできます',
             classification: 'precall-warning',
             audio: results.audio,
             video: results.video,
@@ -78,7 +76,7 @@
 
           if (audioSupported) {
             return callback(false, {
-              text: 'Your bandwidth can support audio only.',
+              text: '帯域幅は音声のみをサポートできます',
               classification: 'precall-warning',
               audio: results.audio,
               video: results.video,
@@ -87,7 +85,7 @@
           }
 
           return callback(false, {
-            text: 'Your bandwidth is too low for video or audio.',
+            text: 'ビデオまたはオーディオに対して帯域幅が低すぎます',
             classification: 'precall-error',
             audio: results.audio,
             video: results.video
@@ -147,6 +145,7 @@
           }
 
           testStreamingCapability(subscriber, (error, result) => {
+            console.log(result, callback);
             callback(error, result);
             callbacks.cleanup();
           });

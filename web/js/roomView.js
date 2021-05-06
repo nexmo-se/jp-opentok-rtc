@@ -64,9 +64,9 @@ BubbleFactory, LayoutManager */
       button: 'Lock Meeting',
     },
     endCall: {
-      head: 'Do you want to leave the meeting?',
-      detail: 'The meeting will continue with the remaining participants.',
-      button: 'Leave meeting',
+      head: 'ミーティングから退出しますか？',
+      detail: 'ミーティングは残りの参加者で継続されます',
+      button: 'ミーティングを退出',
     },
     endLockedCall: {
       head: 'Do you want to unlock the meeting before leaving?',

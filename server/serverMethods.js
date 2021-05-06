@@ -504,7 +504,7 @@ function ServerMethods(aLogLevel, aModules) {
             hotjarId: tbConfig.hotjarId,
             hotjarVersion: tbConfig.hotjarVersion,
             enableFeedback: tbConfig.enableFeedback,
-            enterButtonLabel: 'Join Meeting',
+            enterButtonLabel: 'ミーティングに参加',
             introText: tbConfig.introText,
             introFooterLinkText: tbConfig.introFooterLinkText,
             introFooterLinkUrl: tbConfig.introFooterLinkUrl,

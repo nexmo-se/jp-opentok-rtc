@@ -653,9 +653,9 @@ PhoneNumberController, ResizeSensor, maxUsersPerRoom */
     if (inputElem && inputElem.textContent) {
       navigator.clipboard.writeText(inputElem.textContent.trim())
         .then(() => {
-          if (inviteLinkBtn.innerText !== 'Copied!') {
+          if (inviteLinkBtn.innerText !== 'コピーされました') {
             const originalText = inviteLinkBtn.innerText;
-            inviteLinkBtn.innerText = 'Copied!';
+            inviteLinkBtn.innerText = 'コピーされました';
             setTimeout(() => {
               Modal.hide(selector);
               inviteLinkBtn.innerText = originalText;

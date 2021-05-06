@@ -242,7 +242,7 @@
     const TEST_DURATION_MAX = 200; // 20 seconds
     const meterLevel = document.getElementById('precall-test-meter-level');
     setSwitchStatus(true, 'Video', 'roomView:initialVideoSwitch');
-    document.querySelector('#test-status label').innerText = 'Testing audio / video quality…';
+    document.querySelector('#test-status label').innerText = 'オーディオ/ビデオ品質のテスト';
     meterLevel.style.width = 0;
     meterLevel.style['animation-play-state'] = 'running';
     let preCallTestProgress = 0;
@@ -264,7 +264,7 @@
     let packetLossStr;
 
     clearInterval(testMeterInterval);
-    document.querySelector('#test-status label').innerText = 'Done.';
+    document.querySelector('#test-status label').innerText = '完了';
     document.getElementById('precall-test-meter-level').style['animation-play-state'] = 'paused';
     setTestMeterLevel(1);
     document.getElementById('connectivity-cancel').style.display = 'none';
@@ -274,23 +274,23 @@
     if (results.video) {
       document.getElementById('video-bitrate').innerText = Math.round(results.video.bitsPerSecond / 1000);
       packetLossStr = isNaN(results.video.packetLossRatio) ? ''
-        : `${Math.round(100 * results.video.packetLossRatio)}% packet loss`;
+        : `${Math.round(100 * results.video.packetLossRatio)}% パケットロス`;
       document.getElementById('precall-video-packet-loss').innerText = packetLossStr;
     } else {
       document.getElementById('video-bitrate').innerText = 0;
       document.getElementById('precall-video-packet-loss').innerText = 'No video.';
     }
     const precallHeadingElement = document.getElementById('pre-call-heading');
-    precallHeadingElement.classList = results.classification;
+    precallHeadingElement.classList = results.classification;    
     switch (results.classification) {
       case 'precall-tick':
-        precallHeadingElement.innerText = 'Excellent Connectivity';
+        precallHeadingElement.innerText = '優れた接続性';
         break;
       case 'precall-warning':
-        precallHeadingElement.innerText = 'OK Connectivity';
+        precallHeadingElement.innerText = '良好な接続性';
         break;
       case 'precall-error':
-        precallHeadingElement.innerText = 'Poor Connectivity';
+        precallHeadingElement.innerText = '貧弱な接続性';
         break;
       default:
         // No-op on default;
@@ -298,7 +298,7 @@
     document.getElementById('pre-call-description').innerText = results.text;
     document.getElementById('precall-icon').setAttribute('data-icon', results.classification);
     packetLossStr = isNaN(results.audio.packetLossRatio) ? ''
-      : `${Math.round(100 * results.audio.packetLossRatio)}% packet loss`;
+      : `${Math.round(100 * results.audio.packetLossRatio)}% パケットロス`;
     document.getElementById('precall-audio-packet-loss').innerText = packetLossStr;
   };
 
@@ -310,15 +310,15 @@
     let newStatus;
     if (status === undefined) {
       newStatus = domElem.classList.toggle('activated');
-      labelElement.innerText = 'On';
+      labelElement.innerText = 'オン';
     } else {
       newStatus = status;
       if (status) {
         domElem.classList.add('activated');
-        labelElement.innerText = 'On';
+        labelElement.innerText = 'オン';
       } else {
         domElem.classList.remove('activated');
-        labelElement.innerText = 'Off';
+        labelElement.innerText = 'オフ';
       }
     }
     newStatus !== oldStatus && Utils.sendEvent(evtName, { status: newStatus });

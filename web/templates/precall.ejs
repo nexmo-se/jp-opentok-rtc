@@ -56,20 +56,20 @@
       <% } %>
       <div class="user-name-input-container">
         <input id="user-name-input" class="block username" name="userName" autocomplete="off" data-wd="username" maxlength="46">
-        <label>Your name (optional)</label>
+        <label>あなたの名前（オプション）</label>
       </div>
       <div class="publish-settings">
         <div id="video-settings">
           <div>
             <img alt="video source toggle" src="/images/icons/Vlt-icon-video-active-full.svg" />
-            <span>Camera</span>
+            <span>カメラ</span>
           </div>
           <div class="right-settings">
             <div class="sourcePick switch-button" id="video-switch">
-              <a id="preToggleFacingMode"> Switch </a>
+              <a id="preToggleFacingMode"> 切替 </a>
             </div>
             <a id="initialVideoSwitch" class="activated">
-              <label>On</label>
+              <label>オン</label>
               <i data-icon="videoSwitch"></i>
             </a>
           </div>
@@ -77,7 +77,7 @@
         <div id="audio-settings">
           <div>
             <img alt="audio source toggle"src="/images/icons/Vlt-icon-microphone-full.svg" />
-            <span>Microphone</span>
+            <span>マイク</span>
             <div id=audio-meter-container>
               <div id="audio-meter">
                 <div id="audio-meter-level">
@@ -87,10 +87,10 @@
           </div>
           <div class="right-settings">
             <div class="sourcePick switch-button" id="audio-switch">
-              <a id="prePickMic"> Switch </a>
+              <a id="prePickMic"> 切替 </a>
             </div>
             <a id="initialAudioSwitch" class="activated">
-              <label>On</label>
+              <label>オン</label>
               <i data-icon="audioSwitch"></i>
             </a>
           </div>
@@ -99,7 +99,7 @@
         <div id="pre-call-test">
           <div id="precall-test-labels">
             <img src="/images/icons/connectivity-icon.svg" />
-            <span id="connectivity-test-label">Connectivity test</span>
+            <span id="connectivity-test-label">接続テスト</span>
             <span id="test-status">
               <label></label>
               <button id="connectivity-cancel">
@@ -131,7 +131,7 @@
     <div id="results">
       <div id="precall-video-results" class="precall-media-results">
         <p class="media-heading">
-          VIDEO QUALITY
+          ビデオ品質
         </p>
         <p class="bitrate">
           <span id="video-bitrate"></span> Kbps
@@ -145,19 +145,19 @@
       </div>
       <div id="precall-audio-results" class="precall-media-results">
         <p class="media-heading">
-          AUDIO QUALITY
+          オーディオ品質
         </p>
         <p class="bitrate">
           <span id="audio-bitrate">40</span> Kbps
         </p>
         <p id="precall-audio-packet-loss">
-          0% packet loss
+          0% パケットロス
         </p>
       </div>
     </div>
     <div id="retest">
       <i data-icon="precall-retest" id="precall-retest"></i>
-      Re-test
+      再度テスト
     </div>
   </div>
   <% } %>
