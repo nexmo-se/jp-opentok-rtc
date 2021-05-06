@@ -34,34 +34,29 @@ BubbleFactory, LayoutManager */
 
   const MODAL_TXTS = {
     mute: {
-      head: 'Mute all participants, including yourself',
-      detail: 'Everyone will be notified and can click their <i data-icon="no_mic"></i> button'
-              + ' to unmute themselves.',
-      button: 'Mute all participants',
+      head: '自分を含むすべての参加者をミュートする',
+      detail: '全員に通知が届き、<i data-icon="no_mic"></i> ボタンをクリックしてミュートを解除できます',
+      button: 'すべての参加者をミュート',
     },
     muteRemotely: {
-      head: 'All participants microphones are being disabled in the call',
-      detail: 'If you want to keep talking, '
-              + 'you must manually enable your own microphone.',
-      button: 'I understand',
+      head: '通話中、参加者全員のマイクが無効になっています',
+      detail: '話し続けたい場合は、手動で自分のマイクを有効にする必要があります',
+      button: '了解',
     },
     unmutedRemotely: {
-      head: 'Your microphone is now enabled in the call',
-      detail: 'If you want to remain muted, '
-              + 'you must manually disable your own microphone.',
-      button: 'I understand',
+      head: '通話中、あなたのマイクが有効になりました',
+      detail: 'ミュートしたままにしたい場合は、自分のマイクを手動で無効にする必要があります',
+      button: '了解',
     },
     join: {
-      head: 'All participants are muted',
-      detail: 'You can unmute everyone by toggling the Mute all participants option. Or you can '
-              + 'unmute just yourself by clicking the microphone icon in the bottom menu.',
-      button: 'I understand',
+      head: 'すべての参加者がミュートされました',
+      detail: '[すべての参加者をミュート]トグルボタンをもう一度クリックして、全員のミュートを解除できます。または、下部のメニューにあるマイクアイコンをクリックして、自分だけのミュートを解除することもできます。',
+      button: '了解',
     },
     lock: {
-      head: 'Do you want to lock the meeting?',
-      detail: 'When a meeting room is locked, no one else will be allowed to join the meeting. '
-              + 'Current participants who leave the meeting will not be allowed back in.',
-      button: 'Lock Meeting',
+      head: '会議をロックしますか？',
+      detail: '会議室がロックされている場合、他の人はこの会議に参加できません。会議を離れた現在の参加者は、再び参加することはできません',
+      button: '会議ロック',
     },
     endCall: {
       head: 'ミーティングから退出しますか？',
@@ -69,27 +64,25 @@ BubbleFactory, LayoutManager */
       button: 'ミーティングを退出',
     },
     endLockedCall: {
-      head: 'Do you want to unlock the meeting before leaving?',
-      detail: 'The meeting will continue with the remaining participants. When a meeting room is locked, no one else will be allowed to join or re-join the meeting.',
-      button: 'Unlock and Leave',
-      altButton: 'Leave Without Unlocking',
+      head: 'この会議を離れる前に会議のロックを解除しますか？',
+      detail: '会議は残りの参加者と継続されます。会議室がロックされている場合、他の誰も会議に参加または再参加することはできません。',
+      button: 'ロックを解除して退出',
+      altButton: 'ロックを解除せずに退出',
     },
     sessionDisconnected: {
-      head: 'Session disconected',
-      detail: 'The connection to the OpenTok platform has been lost. Check your network '
-              + 'connectivity and press Reload to connect again.',
-      button: 'Reload',
+      head: 'セッションが切断されました',
+      detail: 'Vonageビデオプラットフォームへの接続が失われました。ネットワーク接続を確認し、[再読み込み]を押して再度接続してください',
+      button: '再読み込み',
     },
     chromePublisherError: {
-      head: 'Internal Chrome Error',
-      detail: 'Failed to acquire microphone. This is a known Chrome bug. Please completely quit '
-              + 'and restart your browser.',
-      button: 'Reload',
+      head: 'Chrome内部エラー',
+      detail: 'マイクの取得に失敗しました。これはChromeの既知のバグです。ブラウザを完全に終了して再起動してください',
+      button: '再読み込み',
     },
     meetingFullError: {
-      head: 'Meeting Full',
-      detail: `This meeting has reached the full capacity of ${window.maxUsersPerRoom} participants. Try&nbsp;joining later.`,
-      button: 'OK',
+      head: '会議が満室です',
+      detail: `この会議は、${window.maxUsersPerRoom}人の参加者の定員に達しました。後で参加してみてください`,
+      button: '了解',
     },
   };
 
