@@ -94,9 +94,9 @@
           const select = document.getElementById('select-devices');
           select.style.display = 'inline-block';
           Modal.showConfirm({
-            head: 'Set mic input',
-            detail: 'Please identify the audio source in the following list:',
-            button: 'Set',
+            head: 'マイク入力をセット',
+            detail: '以下から音声ソースを選択してください',
+            button: '変更',
           }, true).then((start) => {
             if (start) {
               Utils.sendEvent('roomView:setAudioSource', select.value);
